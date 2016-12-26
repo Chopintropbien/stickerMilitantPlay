@@ -1,0 +1,29 @@
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /css/*file                    controllers.Assets.at(path="/boostrap/theme/css", file)
+
+
+GET     /                                    controllers.MainController.home
+GET     /items                                controllers.MainController.items
+GET     /idea                                controllers.MainController.idea
+GET     /contact-us                          controllers.MainController.contactUs
+
+
+
+POST    /contactUs                    controllers.Api.contactUs
+POST    /login                        controllers.Api.login
+POST    /logout                       controllers.Api.logout
+POST          /user                   controllers.Api.addUser
+
+
+
+GET     /p                                   controllers.Application.listProjects
+PUT     /projects/:name                      controllers.Application.createProject(name: String)
+GET     /projects/list                       controllers.Application.listProjects
+GET     /projects/:id                        controllers.Application.projects(id: Long)
+PUT     /projects/:id/:name                  controllers.Application.addTaskToProject(name: String, id: Long)
+PATCH   /tasks/:id                           controllers.Application.modifyTask(id: Long, color:Option[String] ?= None)
+
+DELETE  /projects/:name                      controllers.Application.delete(name: String)

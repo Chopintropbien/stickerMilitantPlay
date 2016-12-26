@@ -1,0 +1,96 @@
+**Changelog:**
+
+**Version 1.9:**
+
+- Updated bootstrap css and js files from 3.3.4 to 3.3.50.
+- Updated jquery from 1.11.2 to 1.11.3.
+- Updated HTML5Shiv from 3.7.2 to 3.7.3.
+- Minor design fixes (style.css)
+- UI Design - Updated jquery knob to 1.2.11.
+- UI Design - Updated jquery Nicescroll to 3.6.0.
+- Updated jQuery validator and additional methods to version 1.13.1.
+- Updated isotope to version 2.2.0.
+- Updated arbitrary anchor to latest version.
+- Updated jquery countdown to version 2.0.4. 
+- Updated Knob to version 1.2.11.
+- Updated magnific popup to version 1.0.0.
+- Updated sticky to version 1.0.2.
+- Updated revolution slider to version 4.6.4. 
+- Updated placeholders.js to version 4.0.1.
+- Updated masonry to version 3.3.1.
+- Updated timepicker to version 1.5.3. 
+
+**Version 1.8:**
+
+- Ecommerce index page update (ecommerce-index.html, style.css)
+- Index portfolio page update (index-portfolio.html, style.css)
+- Portfolio four update (portfolio-four.html, style.css)
+- Style switcher updated. (Doesn't affect main theme) (style-switcher.css, style-switcher.js).
+
+**Version 1.7:**
+
+- About Us One page accordion bug fix. (about-us-one.html)
+- UPDATED - Bootstrap CSS (3.3.2), Bootstrap JS, jQuery. 
+- UPDATED - Font awesome icon to 4.3.0.
+- Lot of minor design fix. (style.css).
+- Our doctors page design update. (medical-our-doctor.html, medical.css).
+- Non profit causes page minor color change. (non-profit-causes.html).
+
+**Version 1.6:**
+
+- UPDATED - jQuery, Bootstrap CSS (3.3.1), Bootstrap JS, HTML5Shiv to latest versions. 
+- Added arrows to carousel in ecommerce-item-single.html page. 
+- UI #15 bug fix. (style.css)
+- Login and register form bug fix. (style.css)
+- Default nav tab style fix. (style.css, all skin css files and less file)
+- Focus bug fix. (all skin css files and less file)
+- Style switcher included. (If you don't want style switcher disable it. Read doc).
+- Nav tabs bug fix. (style.css)
+- Accordion style four bug fix. (accordion.html, style.css and less styles). I used this accordion in following pages (events.html, index.html, medical-index.html, service-two.html).
+- Image style two bug fix. (images.html, style.css)
+- Font update in tooltips and pop overs. (style.css)
+- Magazine page image width fix. (style.css)
+
+**Version 1.5:**
+
+- Removed Universal Mega Menu plugin and replaced with custom navigation menu. (all HTML files, style.css, Less file, main.js).
+- NEW Added 13 new ui designs. (ui-38.html to ui-50.html).
+- NEW 404 error page. (404.html).
+- NEW Two new about pages. (about-three.html and about-four.html).
+- NEW App site theme. (app-site.html).
+- NEW Author page. (author-page.html).
+- NEW One page theme with background image. (background-image.html).
+- NEW Box shadow component. (box-shadow-alt.html).
+- NEW Career page. (careers-one.html).
+- NEW Coming soon page. (coming-soon.html).
+- NEW Two new contact us page. (contact-us-three.html and contact-us-four.html).
+- NEW Events page. (events-two.html).
+- NEW FAQ design. (faq.html).
+- NEW Forget password page. (forget-password.html).
+- NEW Gallery page. (gallery-three.html).
+- NEW Five new heading styles. (heading.html).
+- NEW Magazine single page. (magazine-single.html).
+- NEW Masonry gird page. (masonry-grid.html).
+- NEW Our process page with new our process design. (our-process.html).
+- NEW Portfolio theme. (portfolio.html).
+- NEW Pricing table design. (pricing-table.html).
+- NEW Revolution slider design. (revolution-slider.html).
+- NEW Two new service pages. (service-three.html and service-four.html).
+- CSS clean up. 
+- Updated font awesome icon to latest version (4.2).
+- Updated revolution slider to latest version. In latest version file jquery.themepunch.plugins.js is renamed to jquery.themepunch.tools.js. The name is updated in index.html and revolution-slider.html file. 
+- Minor design update in coming-soon-image and coming-soon-color file. (css/styles/comingsoon.css)
+- Made "our process" section as a separate block. Previously it was inside "about us one". 
+- Minor update in revolution slider 4th slide. 
+- Updated popover design. (style.css)
+
+**Version 1.1:**
+
+- Commented search box from sitemap.html.
+- Updated ui design 34 (ui-34.html, style-34.css)
+- Removed flex slider completely and replaced it with default Bootstrap carousel. Removed flexslider css, flexslider js, flex slider font. This means this theme don't have flex slider plugin. All previous flex sliders are updated to Bootstrap carousel. 
+- Renamed file name index-flex-slider.html to index-bootstrap-carousel.html and flexslider.html to bootstrap-carousel.html.
+
+**Version 1.0:**
+
+- Initial Release
