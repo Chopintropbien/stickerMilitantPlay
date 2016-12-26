@@ -1,0 +1,40 @@
+@import settings.Helpers._
+@import helper._
+@import play.api.Play.current
+
+@(loginForm: Form[LoginData])(implicit message: RequestHeader, messages: Messages, lang: Lang)
+
+<!--Login Form -->
+@form(action = routes.Api.login, args = 'class -> "form-horizontal", 'role -> "form", 'id -> "loginForm") {
+@CSRF.formField
+<div class="form-group">
+    <div class="col-sm-12">
+        @inputText(loginForm("email"),
+        args = 'class -> "form-control",
+        'id -> "emailLogin",
+        'placeholder -> messages("form.email"),
+        'type -> "email")
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-sm-12">
+        @inputPassword(loginForm("password"),
+        args = 'class -> "form-control",
+        'id -> "passwordLogin",
+        'placeholder -> messages("form.password"))
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-sm-12">
+        <div class="checkbox">
+            <span class="pull-right"><a href="#">@messages("form.forgetPassword")</a></span>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<div class="form-group text-center">
+    <div class="col-sm-12">
+        <button type="button" id="loginButton" class="btn btn-black">@messages("button.login")</button>&nbsp;
+    </div>
+</div>
+}

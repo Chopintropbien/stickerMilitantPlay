@@ -1,0 +1,70 @@
+@(css: Html, js: Html, mainBlock: Html, companyData: Map[String, String], login: Boolean)(implicit messages: Messages, lang: Lang)
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <!-- Title here -->
+    <title>Brave</title>
+    <!-- Description, Keywords and Author -->
+    <meta name="description" content="Your description"/>
+    <meta name="keywords" content="Your,Keywords"/>
+    <meta name="author" content="ResponsiveWebInc"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    @commonToAllPage.css()
+    @css
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="#">
+</head>
+
+ <!--Add class "boxed" along with body for boxed layout. -->
+ <!--Add "pattern-x" (1 to 5) for background patterns. -->
+ <!--Add "img-x" (1 to 5) for background images. -->
+
+<body>
+
+<!-- Outer Starts -->
+<div class="outer">
+
+    <!-- Top bar starts -->
+    <!--commonToAllPage.topBar()-->
+
+    <!-- Top bar ends -->
+
+    <!-- Header two Starts -->
+    @commonToAllPage.headerMenu()
+
+
+
+
+    <!-- Main content starts -->
+
+    <div class="main-block">
+        @mainBlock
+    </div>
+
+
+    <!-- Main content ends -->
+
+    <!-- Foot Starts -->
+    @commonToAllPage.footer()
+
+
+</div>
+
+<!-- Outer Ends -->
+
+<!-- Scroll to top -->
+<span class="totop"><a href="#"><i class="fa fa-angle-up bg-color"></i></a></span>
+
+<!-- This Page JavaScript -->
+@commonToAllPage.js()(messages, lang)
+
+<!-- Javascript files -->
+@js
+
+</body>
+</html>

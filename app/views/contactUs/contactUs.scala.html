@@ -1,0 +1,14 @@
+@(contactForm: Form[ContactData], companyData: Map[String, String], login: Boolean)(implicit message: RequestHeader, messages: Messages, lang: Lang)
+
+
+@css() = {
+
+}
+
+@js() = {
+
+
+
+}
+
+@commonToAllPage.template(css(), js(), mainBlock(contactForm)(message, messages, lang), companyData, login)(messages, lang)

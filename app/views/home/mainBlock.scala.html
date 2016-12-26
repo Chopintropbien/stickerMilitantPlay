@@ -1,0 +1,183 @@
+@()(implicit messages: Messages, lang: Lang)
+
+<!-- Page heading one starts -->
+<div class="page-heading-one">
+    <h2>My Cool Blog</h2>
+    <a><p class="bg-color">Our Works Here</p></a>
+</div>
+
+
+<!-- Shopping Items -->
+<div class="ecommerce">
+
+
+    <div class="container">
+
+        <!-- Information Block -->
+        <div class="info">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <!-- Information Item -->
+                    <div class="info-item bg-red">
+                        <!-- Number -->
+										<span class="num-outer">
+											<i class="fa fa-truck red"></i>
+										</span>
+                        <!-- Heading -->
+                        <h4>Feminism</h4>
+                        <!-- Sub Heading -->
+                        <h5>Anti-sexism</h5>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <!-- Information Item -->
+                    <div class="info-item bg-green">
+                        <!-- Number -->
+										<span class="num-outer">
+											<i class="fa fa-retweet green"></i>
+										</span>
+                        <!-- Heading -->
+                        <h4>Capitalism</h4>
+                        <!-- Sub Heading -->
+                        <h5>Within 30 days.</h5>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <!-- Information Item -->
+                    <div class="info-item bg-orange">
+                        <!-- Number -->
+										<span class="num-outer">
+											<i class="fa fa-credit-card orange"></i>
+										</span>
+                        <!-- Heading -->
+                        <h4>Easy Payment</h4>
+                        <!-- Sub Heading -->
+                        <h5>All carts are separate.</h5>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <!-- Information Item -->
+                    <div class="info-item bg-lblue">
+                        <!-- Number -->
+										<span class="num-outer">
+											<i class="fa fa-phone lblue"></i>
+										</span>
+                        <!-- Heading -->
+                        <h4>Support</h4>
+                        <!-- Sub Heading -->
+                        <h5>+91-1800-000-909</h5>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Information block ends -->
+
+        <!-- Shopping items content -->
+        <div class="shopping-content">
+            <!-- Block Title -->
+            <h4><i class="fa fa-desktop color"></i>&nbsp; Popular Items&nbsp;<small>Quine Poor Squamo</small></h4>
+            <div class="row">
+                <div class="col-md-4 col-sm-12">
+                    <!-- Shopping items -->
+                    <div class="shopping-item">
+                        <!-- Image -->
+                        <a href="ecom-item-single.html"><img class="img-responsive" src="@routes.Assets.versioned("img/ecommerce/items/2.png")" alt="" /></a>
+                        <!-- Shopping item name / Heading -->
+                        <h4><a href="ecom-item-single.html">Quasi Architects</a><span class="color pull-right">0.50$</span></h4>
+                        <div class="clearfix"></div>
+
+
+                        <div class="quantity">
+                            @snippets.buttonsMinusPlus()
+                        </div>
+
+
+                        <!-- Buy now button -->
+                        <div class="visible-xs">
+                            <a class="btn btn-color btn-sm" href="#">Buy Now</a>
+                        </div>
+                        <!-- Shopping item hover block & link -->
+                        <div class="item-hover bg-color hidden-xs">
+                            <a href="#">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <!-- Shopping items -->
+                    <div class="shopping-item">
+                        <!-- Image -->
+                        <a href="ecom-item-single.html"><img class="img-responsive" src="@routes.Assets.versioned("img/ecommerce/items/3.png")" alt="" /></a>
+                        <!-- Shopping item name / Heading -->
+                        <h4><a href="ecom-item-single.html">Byances Kcepte</a><span class="color pull-right">0.50$</span></h4>
+                        <div class="clearfix"></div>
+
+                        <div class="quantity">
+                            @snippets.buttonsMinusPlus()
+                        </div>
+
+                        <!-- Buy now button -->
+                        <div class="visible-xs">
+                            <a class="btn btn-color btn-sm" href="#">Buy Now</a>
+                        </div>
+                        <!-- Shopping item hover block & link -->
+                        <div class="item-hover bg-color hidden-xs">
+                            <a href="#">Add to cart</a>
+                        </div>
+                        <!-- Hot tag -->
+                        <span class="hot-tag bg-red">NEW</span>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <!-- Shopping items -->
+                    <div class="shopping-item">
+                        <!-- Image -->
+                        <a href=""><img class="img-responsive" src="@routes.Assets.versioned("img/ecommerce/items/5.png")" alt="" /></a>
+                        <!-- Shopping item name / Heading -->
+
+                        <div class="row">
+                            <div class="col-md-9">
+                                <h4><a href="ecom-item-single.html">Excepteur Sint</a></h4>
+                            </div>
+                            <div class="col-md-3">
+                                <h4><span class="color pull-right">0.50$</span></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-9">
+                                @snippets.buttonsMinusPlus()
+                            </div>
+                            <div class="col-md-3">
+                                <h5><span class="total pull-right">30.50$</span></h5>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="clearfix"></div>
+
+
+                        <!-- Buy now button -->
+                        <div class="visible-xs">
+                            <a class="btn btn-color btn-sm" href="#">Buy Now</a>
+                        </div>
+                        <!-- Shopping item hover block & link -->
+                        <div class="item-hover bg-color hidden-xs">
+                            <a href="#">Add to cart</a>
+                        </div>
+                        <!-- Hot tag -->
+                        <span class="hot-tag bg-lblue">HOT</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

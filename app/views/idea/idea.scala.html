@@ -1,0 +1,14 @@
+@(companyData: Map[String, String], login: Boolean)(implicit messages: Messages, lang: Lang)
+
+
+@css() = {
+
+}
+
+@js() = {
+
+
+
+}
+
+@commonToAllPage.template(css(), js(), mainBlock()(messages, lang), companyData, login)(messages, lang)

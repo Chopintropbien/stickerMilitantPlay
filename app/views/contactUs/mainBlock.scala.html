@@ -1,0 +1,81 @@
+@(contactForm: Form[ContactData])(implicit message: RequestHeader, messages: Messages, lang: Lang)
+
+
+
+
+
+    <!-- Page heading two starts -->
+
+    <div class="page-heading-two">
+        <div class="container">
+            <h2>Contact Us <span>Something goes here</span></h2>
+            <div class="breads">
+                Home / <a href="#">Page</a> / <a href="#">Sub Page</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <!-- Page heading two ends -->
+
+    <div class="container">
+        <div class="contact-us-two">
+
+            <div class="row">
+                <div class="col-md-5">
+                    <!-- Contact Form -->
+                    <div class="contact-form">
+                        <h5>Contact Form</h5>
+                        <!-- Form -->
+                        @loginRegisterContact.contactFormHtml(contactForm)(message, messages, lang)
+                    </div>
+                    <hr />
+                </div>
+                <div class="col-md-7">
+                    <!-- Contact map -->
+                    <div class="about-us-one">
+                        <div class="col-md-12">
+                            <div class="about-logo">
+                                <h3>Something About <span class="color">Brave</span></h3>
+                                <p>The generate lorem ipsum is there always of free from repe aformat pleasure that has no repetition tition a man who chooses format pleasure that has no  ipsum is there always of free from repe atition a man who chooses to enjoy pleasure.</p>
+                            </div>
+                        </div>
+
+                        <!-- Map Link -->
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-3 col-sm-0">
+                    <!-- Contact Item -->
+
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <!-- Contact Item -->
+                    <div class="contact-item bg-lblue">
+                        <!-- Icon -->
+                        <i class="fa fa-phone"></i>
+                        <!-- Heading -->
+                        <h4>Call Us</h4>
+                        <!-- Paragraph -->
+                        <p>Tel : + (383) 893 3933</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <!-- Contact Item -->
+                    <div class="contact-item bg-green">
+                        <i class="fa fa-envelope"></i>
+                        <h4>Mail Us</h4>
+                        <p><a href="#">info@@mssolution.com</a></p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-0">
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
