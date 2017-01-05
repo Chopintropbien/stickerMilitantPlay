@@ -1,6 +1,7 @@
-@()(implicit messages: Messages, lang: Lang)
+@import models.Category.Category
+@import models.Leaflet
 
-
+@(leaflets: List[Leaflet], selectedCategory: Category)(implicit messages: Messages, lang: Lang)
 
 
     <!-- Page heading two starts -->
@@ -9,7 +10,7 @@
         <div class="container">
             <h2>Smart Phones <span>Something goes here</span></h2>
             <div class="breads">
-                Home / <a href="#">Page</a> / <a href="#">Sub Page</a>
+                <!--Home / <a href="#">Page</a> / <a href="#">Sub Page</a>-->
             </div>
             <div class="clearfix"></div>
         </div>
@@ -26,141 +27,54 @@
             <!-- Design Three Sidebar -->
             <div class="nav-tabs-three-sidebar">
                 <ul class="nav">
-                    <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-angle-double-right"></i> &nbsp; Hemophilia</a></li>
-                    <li><a href="#tab-2" data-toggle="tab"><i class="fa fa-angle-double-right"></i> &nbsp; Porphyria Disorder</a></li>
-                    <li><a href="#tab-3" data-toggle="tab"><i class="fa fa-angle-double-right"></i> &nbsp; Tonsillitis Infection</a></li>
-                    <li><a href="#tab-4" data-toggle="tab"><i class="fa fa-angle-double-right"></i> &nbsp; Pheochromocytoma</a></li>
-                    <li><a href="#tab-5" data-toggle="tab"><i class="fa fa-angle-double-right"></i> &nbsp; Appendicitis</a></li>
-                    <li><a href="#tab-6" data-toggle="tab"><i class="fa fa-angle-double-right"></i> &nbsp; Aseptic meningitis</a></li>
+
+                    @for(c <- Category.values){
+                        @if(c == selectedCategory){
+                        <li class="active tabSelect" id="navTab-@c.id" data-name="@c.toString()">
+                        }else {
+                        <li class="tabSelect" id="navTab-@c.id" data-name="@c.toString()">
+                        }
+                            <a data-toggle="tab">
+                                <i class="fa fa-angle-double-right"></i>&nbsp;
+                                @Category.getName(c, lang)
+                            </a>
+                        </li>
+                    }
                 </ul>
             </div>
             <!-- Design Three Content -->
             <div class="nav-tabs-three-content">
                 <div class="tab-content">
-                    <div class="tab-pane active fade in" id="tab-1">
 
-                       <div class="ecommerce">
-                           <h4><i class="fa fa-desktop color"></i>&nbsp; Popular Items&nbsp;<small>Quine Poor Squamo</small></h4>
-
-                           <!-- Shopping items content -->
-                           <div class="shopping-content">
-                               <!-- Block Title -->
-                               <div class="block-heading-two">
-                                   <h3><span>Hemophilia Disorder</span></h3>
-                               </div>
-                               <div class="row">
-                                   <div class="col-md-4 col-sm-12">
-                                       <!-- Shopping items -->
-                                       <div class="shopping-item">
-                                           <!-- Image -->
-                                           <a href="ecom-item-single.html"><img class="img-responsive" src="@routes.Assets.versioned("img/ecommerce/items/2.png")" alt="" /></a>
-                                           <!-- Shopping item name / Heading -->
-                                           <h4><a href="ecom-item-single.html">Quasi Architects</a><span class="color pull-right">0.50$</span></h4>
-                                           <div class="clearfix"></div>
+                    @for(c <- Category.values){
+                        @if(c == selectedCategory){
+                            <div class="tab-pane active fade in" id="tab-@c.id">
+                        }else{
+                            <div class="tab-pane fade" id="tab-@c.id">
+                        }
+                                <div class="ecommerce">
+                                    <!--<h4><i class="fa fa-desktop color"></i>&nbsp; @Category.getName(c, lang)&nbsp;<small>Quine Poor Squamo</small></h4>-->
 
 
-                                           <div class="quantity">
-                                               @snippets.buttonsMinusPlus()
-                                           </div>
+                                    <!-- Shopping items content -->
+                                    <div class="shopping-content">
+                                        <!-- Block Title -->
+                                        <div class="block-heading-two">
+                                            <h3><span>@Category.getName(c, lang)</span></h3>
+                                        </div>
+                                        <div class="row">
+                                        @for(l <- leaflets.filter(_.category == c).zipWithIndex){
+                                            <div class="col-md-4 col-sm-12">
+                                                @snippets.leaflet(l._1)(messages, lang)
+                                            </div>
+                                        }
+                                        </div>
 
+                                    </div>
+                                </div>
+                            </div>
+                    }
 
-                                           <!-- Buy now button -->
-                                           <div class="visible-xs">
-                                               <a class="btn btn-color btn-sm" href="#">Buy Now</a>
-                                           </div>
-                                           <!-- Shopping item hover block & link -->
-                                           <div class="item-hover bg-color hidden-xs">
-                                               <a href="#">Add to cart</a>
-                                           </div>
-                                       </div>
-                                   </div>
-                                   <div class="col-md-4 col-sm-12">
-                                       <!-- Shopping items -->
-                                       <div class="shopping-item">
-                                           <!-- Image -->
-                                           <a href="ecom-item-single.html"><img class="img-responsive" src="@routes.Assets.versioned("img/ecommerce/items/3.png")" alt="" /></a>
-                                           <!-- Shopping item name / Heading -->
-                                           <h4><a href="ecom-item-single.html">Byances Kcepte</a><span class="color pull-right">0.50$</span></h4>
-                                           <div class="clearfix"></div>
-
-                                           <div class="quantity">
-                                               @snippets.buttonsMinusPlus()
-                                           </div>
-
-                                           <!-- Buy now button -->
-                                           <div class="visible-xs">
-                                               <a class="btn btn-color btn-sm" href="#">Buy Now</a>
-                                           </div>
-                                           <!-- Shopping item hover block & link -->
-                                           <div class="item-hover bg-color hidden-xs">
-                                               <a href="#">Add to cart</a>
-                                           </div>
-                                           <!-- Hot tag -->
-                                           <span class="hot-tag bg-red">NEW</span>
-                                       </div>
-                                   </div>
-                                   <div class="col-md-4 col-sm-12">
-                                       <!-- Shopping items -->
-                                       <div class="shopping-item">
-                                           <!-- Image -->
-                                           <a href=""><img class="img-responsive" src="@routes.Assets.versioned("img/ecommerce/items/5.png")" alt="" /></a>
-                                           <!-- Shopping item name / Heading -->
-
-                                           <div class="row">
-                                               <div class="col-md-9">
-                                                   <h4><a href="ecom-item-single.html">Excepteur Sint</a></h4>
-                                               </div>
-                                               <div class="col-md-3">
-                                                   <h4><span class="color pull-right">0.50$</span></h4>
-                                               </div>
-                                           </div>
-                                           <div class="row">
-                                               <div class="col-md-9">
-                                                   @snippets.buttonsMinusPlus()
-                                               </div>
-                                               <div class="col-md-3">
-                                                   <h5><span class="total pull-right">30.50$</span></h5>
-                                               </div>
-                                           </div>
-
-
-
-
-
-                                           <div class="clearfix"></div>
-
-
-                                           <!-- Buy now button -->
-                                           <div class="visible-xs">
-                                               <a class="btn btn-color btn-sm" href="#">Buy Now</a>
-                                           </div>
-                                           <!-- Shopping item hover block & link -->
-                                           <div class="item-hover bg-color hidden-xs">
-                                               <a href="#">Add to cart</a>
-                                           </div>
-                                           <!-- Hot tag -->
-                                           <span class="hot-tag bg-lblue">HOT</span>
-                                       </div>
-                                   </div>
-
-                               </div>
-                           </div>
-                       </div>
-                    </div>
-                    <div class="tab-pane fade" id="tab-2">
-
-                    </div>
-                    <div class="tab-pane fade" id="tab-3">
-
-                    </div>
-                    <div class="tab-pane fade" id="tab-4">
-
-                    </div>
-                    <div class="tab-pane fade" id="tab-5">
-                    </div>
-                    <div class="tab-pane fade" id="tab-6">
-
-                    </div>
                 </div>
             </div>
             <!-- Clearfix -->

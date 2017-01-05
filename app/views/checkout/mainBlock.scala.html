@@ -1,0 +1,322 @@
+@()(implicit messages: Messages, lang: Lang)
+
+
+
+    <!-- Page heading two starts -->
+
+    <div class="page-heading-two">
+        <div class="container">
+            <h2>Checkout <span>Something goes here</span></h2>
+            <div class="breads">
+                Home / <a href="#">Page</a> / <a href="#">Sub Page</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <!-- Page heading two ends -->
+
+    <div class="container">
+
+        <!-- Actual content -->
+        <div class="ecommerce">
+            <div class="row">
+                <div class="col-md-9 col-sm-8">
+                    <!-- Shopping items content -->
+                    <div class="shopping-content">
+                        <div class="shopping-checkout">
+                            <!-- Heading -->
+                            <h4>Shipping & Billing Details</h4>
+                            <hr />
+                            <form class="form-horizontal" role="form">
+                                <div class="form-group">
+                                    <label for="inputName" class="col-md-2 control-label">Name</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputEmail1" class="col-md-2 control-label">Email</label>
+                                    <div class="col-md-5">
+                                        <input type="email" class="form-control" id="inputEmail1" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPhone" class="col-md-2 control-label">Phone Number</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control" id="inputPhone" placeholder="Phone">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputCountry" class="col-md-2 control-label">Country</label>
+                                    <div class="col-md-5">
+                                        <select class="form-control" id="inputCountry">
+                                            <option>Select Country</option>
+                                            <option>USA</option>
+                                            <option>India</option>
+                                            <option>Canada</option>
+                                            <option>UK</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputAddress" class="col-md-2 control-label">Address</label>
+                                    <div class="col-md-5">
+                                        <textarea class="form-control" id="inputAddress" rows="3" placeholder="Address"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputZip" class="col-md-2 control-label">Zip Code</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control" id="inputZip" placeholder="Zip Code">
+                                    </div>
+                                </div>
+
+                                <hr />
+                                <h4>Payment Details</h4>
+                                <hr />
+                                <div class="form-group">
+                                    <label for="inputPayment" class="col-md-2 control-label">Payment Method</label>
+                                    <div class="col-md-5">
+                                        <select class="form-control" id="inputPayment">
+                                            <option selected>Credit Card</option>
+                                            <option>Debit Card</option>
+                                            <option>Internet Banking</option>
+                                            <option>Check</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputFName" class="col-md-2 control-label">Full Name</label>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control" id="inputFName" placeholder="Card Holder Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardNum" class="col-md-2 control-label">Card Number</label>
+                                    <div class="clearfix visible-sm visible-xs"></div>
+                                    <div class="col-md-3 col-sm-8 col-xs-8">
+                                        <input type="text" class="form-control" id="cardNum" placeholder="Card Number">
+                                    </div>
+                                    <div class="col-md-2 col-sm-4 col-xs-4">
+                                        <input type="text" class="form-control" id="cardNum1" placeholder="CCV">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Date" class="col-md-2 control-label">Expire Date</label>
+                                    <div class="clearfix visible-sm visible-xs"></div>
+                                    <div class="col-md-2 col-sm-4 col-xs-4">
+                                        <select class="form-control" id="Date">
+                                            <option selected>MM</option>
+                                            <option>JAN</option>
+                                            <option>FEB</option>
+                                            <option>MAR</option>
+                                            <option>APR</option>
+                                            <option>MAY</option>
+                                            <option>JUN</option>
+                                            <option>JUL</option>
+                                            <option>AUG</option>
+                                            <option>SEP</option>
+                                            <option>OCT</option>
+                                            <option>NOV</option>
+                                            <option>DEC</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3 col-sm-8 col-xs-8">
+                                        <select class="form-control" id="Date1">
+                                            <option selected>YYYY</option>
+                                            <option>2014</option>
+                                            <option>2015</option>
+                                            <option>2016</option>
+                                            <option>2017</option>
+                                            <option>2018</option>
+                                            <option>2019</option>
+                                            <option>2020</option>
+                                            <option>2021</option>
+                                            <option>2022</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-6">
+                                        <button type="submit" class="btn btn-color">Confirm Order</button>
+                                        <button type="reset" class="btn btn-default">Reset</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div class="col-md-3 col-sm-4">
+
+                    <!-- Shopping Sidebar -->
+                    <div class="sidebar">
+
+                        <!-- Heading -->
+                        <h2>Navigation</h2>
+                        <!-- Sidebar Menu -->
+                        <ul class="account-nav">
+                            <li><a href="ecommerce-account.html">My Account</a></li>
+                            <li><a href="ecommerce-edit-profile.html">Edit Profile</a></li>
+                            <li><a href="ecommerce-order-history.html">Order History</a></li>
+                            <li><a href="ecommerce-wish-list.html">Wish List</a></li>
+                        </ul>
+
+                        <!-- Sidebar Widget -->
+                        <div class="s-widget">
+                            <h3><i class="fa fa-fire color"></i> Hot Selling</h3>
+                            <!-- Widget Content -->
+                            <div class="sw-content">
+                                <!-- Image -->
+                                <a href="#"><img class="img-responsive" src="img/ecommerce/items/4.png" alt="" /></a>
+                                <!-- Heading -->
+                                <a href="#"><h4>HTC Hi-Tech</h4></a>
+                                <!-- Stars -->
+											<span class="star">
+												<i class="fa fa-star yellow"></i>
+												<i class="fa fa-star yellow"></i>
+												<i class="fa fa-star yellow"></i>
+											</span>
+                                <!-- Price -->
+                                <span class="sw-price">$49</span>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <!-- Widget Content -->
+                            <div class="sw-content">
+                                <!-- Image -->
+                                <a href="#"><img class="img-responsive" src="img/ecommerce/items/5.png" alt="" /></a>
+                                <!-- Heading -->
+                                <a href="#"><h4>Motorola GSD</h4></a>
+                                <!-- Stars -->
+											<span class="star">
+												<i class="fa fa-star yellow"></i>
+												<i class="fa fa-star yellow"></i>
+												<i class="fa fa-star yellow"></i>
+												<i class="fa fa-star-half-o yellow"></i>
+											</span>
+                                <!-- Price -->
+                                <span class="sw-price">$99</span>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <!-- Widget Content -->
+                            <div class="sw-content">
+                                <!-- Image -->
+                                <a href="#"><img class="img-responsive" src="img/ecommerce/items/6.png" alt="" /></a>
+                                <!-- Heading -->
+                                <a href="#"><h4>Samsung G60</h4></a>
+                                <!-- Stars -->
+											<span class="star">
+												<i class="fa fa-star yellow"></i>
+												<i class="fa fa-star yellow"></i>
+												<i class="fa fa-star yellow"></i>
+												<i class="fa fa-star yellow"></i>
+												<i class="fa fa-star yellow"></i>
+											</span>
+                                <!-- Price -->
+                                <span class="sw-price">$120</span>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Recent items Starts -->
+
+            <div class="recent-items">
+
+                <!-- Block heading two -->
+                <div class="block-heading-two">
+                    <h3><span>Recent Items</span></h3>
+                </div>
+
+                <!-- Owl carousel block starts -->
+                <!-- Change values of data-items, data-auto-play, data-pagination & data-single-item based on your needs -->
+                <div class="owl-carousel" data-items="5" data-auto-play="true" data-pagination="true" data-single-item="false">
+                    <!-- Carousel item -->
+                    <div class="owl-content">
+                        <div class="padd-15">
+                            <a href="#"><img src="img/ecommerce/items/1.png" alt="" class="img-responsive" /></a>
+                            <h4><a href="#"> Motorola G <span class="color pull-right">$25</span></a></h4>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="owl-content">
+                        <div class="padd-15">
+                            <a href="#"><img src="img/ecommerce/items/2.png" alt="" class="img-responsive" /></a>
+                            <h4><a href="#"> Google Nexus 7 <span class="color pull-right">$25</span></a></h4>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="owl-content">
+                        <div class="padd-15">
+                            <a href="#"><img src="img/ecommerce/items/3.png" alt="" class="img-responsive" /></a>
+                            <h4><a href="#"> Samsung Galaxy <span class="color pull-right">$25</span></a></h4>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="owl-content">
+                        <div class="padd-15">
+                            <a href="#"><img src="img/ecommerce/items/4.png" alt="" class="img-responsive" /></a>
+                            <h4><a href="#"> Lenovo Phonepad <span class="color pull-right">$25</span></a></h4>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="owl-content">
+                        <div class="padd-15">
+                            <a href="#"><img src="img/ecommerce/items/5.png" alt="" class="img-responsive" /></a>
+                            <h4><a href="#"> Asus Ideapad <span class="color pull-right">$25</span></a></h4>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="owl-content">
+                        <div class="padd-15">
+                            <a href="#"><img src="img/ecommerce/items/6.png" alt="" class="img-responsive" /></a>
+                            <h4><a href="#"> Micromax Canvas <span class="color pull-right">$25</span></a></h4>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="owl-content">
+                        <div class="padd-15">
+                            <a href="#"><img src="img/ecommerce/items/7.png" alt="" class="img-responsive" /></a>
+                            <h4><a href="#"> Sony Xperia Pro <span class="color pull-right">$25</span></a></h4>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="owl-content">
+                        <div class="padd-15">
+                            <a href="#"><img src="img/ecommerce/items/8.png" alt="" class="img-responsive" /></a>
+                            <h4><a href="#"> Apple iPhone 5S <span class="color pull-right">$25</span></a></h4>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="owl-content">
+                        <div class="padd-15">
+                            <a href="#"><img src="img/ecommerce/items/9.png" alt="" class="img-responsive" /></a>
+                            <h4><a href="#"> Galaxy Tab 2 <span class="color pull-right">$25</span></a></h4>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="owl-content">
+                        <div class="padd-15">
+                            <a href="#"><img src="img/ecommerce/items/10.png" alt="" class="img-responsive" /></a>
+                            <h4><a href="#"> Karboon Tab <span class="color pull-right">$25</span></a></h4>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Owl carousel block ends -->
+
+            </div>
+
+            <!-- Recent items Ends -->
+
+
+        </div>
+    </div>

@@ -1,5 +1,27 @@
 //original http://bootsnipp.com/snippets/featured/buttons-minus-and-plus-in-input
 $( document ).ready(function() {
+
+
+
+  function doOnChange(val, id){
+    var totalSpan = $("#total-" + id);
+    var totalContainer= $("#totalContainer-" + id);
+    var price = $("#priceLeaflet-" + id).text();
+
+    if(val == "0"){
+        totalContainer.hide();
+    }
+    else{
+        totalContainer[0].style.display = "initial";
+        var t = parseInt(val) * parseFloat(price);
+        console.log(parseInt(val));
+        console.log(parseFloat(price));
+        totalSpan.html(t);
+    }
+  }
+
+
+
   $.fn.bootnumberspiner = function(options) {
   	var spinners = $(this);
     
@@ -20,7 +42,7 @@ $( document ).ready(function() {
         var $spinner = $(spinner);
       
         spinner.settings.value = $spinner.attr('data-value') || spinner.settings.value;
-        spinner.settings.id = $spinner.attr('data-id') || spinner.settings.id;
+        spinner.settings.id = $spinner.attr('data-id');
       	spinner.settings.name = $spinner.attr('data-name') || spinner.settings.name;
       
       	$spinner.css("width",spinner.settings.width);
@@ -38,6 +60,7 @@ $( document ).ready(function() {
     
     
     function change($spinner,spinner){
+
         var input_number = $spinner.find('.input-number');
     
         $(input_number).change(function() {
@@ -60,6 +83,8 @@ $( document ).ready(function() {
           }
           
           spinner.settings.onChange(valueCurrent,spinner);
+
+          doOnChange($(this).val(), spinner.settings.id);
     	});
     }
     
@@ -82,7 +107,10 @@ $( document ).ready(function() {
                 $(this).val($(this).data('oldValue'));
             }
             else{
-                var v = Math.max($(this).attr('max'), Math.round(currentVal));
+                if(currentVal < 0){
+                    currentVal = 0;
+                }
+                var v = Math.min($(this).attr('max'), Math.round(currentVal));
                 $(this).val(Math.round(v));
             }
         });
@@ -92,6 +120,7 @@ $( document ).ready(function() {
     
     
     function bind_click($spinner,spinner){
+
       var btn_number = $spinner.find('.btn-number');
       
          $(btn_number).click(function(e){

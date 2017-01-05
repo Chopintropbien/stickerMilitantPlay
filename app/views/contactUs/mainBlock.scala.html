@@ -1,4 +1,4 @@
-@(contactForm: Form[ContactData])(implicit message: RequestHeader, messages: Messages, lang: Lang)
+@(contactForm: Form[ContactData], companyData: Map[String, String], login: Boolean)(implicit message: RequestHeader, messages: Messages, lang: Lang)
 
 
 
@@ -9,9 +9,9 @@
     <div class="page-heading-two">
         <div class="container">
             <h2>Contact Us <span>Something goes here</span></h2>
-            <div class="breads">
-                Home / <a href="#">Page</a> / <a href="#">Sub Page</a>
-            </div>
+            <!--<div class="breads">-->
+                <!--Home / <a href="#">Page</a> / <a href="#">Sub Page</a>-->
+            <!--</div>-->
             <div class="clearfix"></div>
         </div>
     </div>
@@ -37,7 +37,13 @@
                         <div class="col-md-12">
                             <div class="about-logo">
                                 <h3>Something About <span class="color">Brave</span></h3>
-                                <p>The generate lorem ipsum is there always of free from repe aformat pleasure that has no repetition tition a man who chooses format pleasure that has no  ipsum is there always of free from repe atition a man who chooses to enjoy pleasure.</p>
+                                <p>
+                                    Salut à toi! Militant ou personne qui refuse ne rester immobile face au injustices et à ce monde qui ne
+                                    tourne pas tout à fait rond!
+                                    <br/>
+                                    On vient juste de lancer ce site, alors si tu as des propositions ou idées, n'ésite pas à nous écrire!!
+                                    On t'en remercira!
+                                </p>
                             </div>
                         </div>
 
@@ -60,7 +66,7 @@
                         <!-- Heading -->
                         <h4>Call Us</h4>
                         <!-- Paragraph -->
-                        <p>Tel : + (383) 893 3933</p>
+                        <a><a href="tel:@companyData("phoneNumber")">@companyData("phoneNumber")</a></p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
@@ -68,7 +74,7 @@
                     <div class="contact-item bg-green">
                         <i class="fa fa-envelope"></i>
                         <h4>Mail Us</h4>
-                        <p><a href="#">info@@mssolution.com</a></p>
+                        <p><a href="mailto:@companyData("email")">@companyData("email")</a></p>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-0">

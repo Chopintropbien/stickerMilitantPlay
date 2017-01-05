@@ -2,20 +2,47 @@
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)
 
-GET     /css/*file                    controllers.Assets.at(path="/boostrap/theme/css", file)
+GET     /leaflet/*file                    controllers.Assets.at(path="/public/img/leaflet", file)
+
+
+GET     /init                                controllers.MainController.init
+
+GET     /leafLets                            controllers.MainController.getLeaflet
+
 
 
 GET     /                                    controllers.MainController.home
-GET     /items                                controllers.MainController.items
+GET     /items/:category                     controllers.MainController.items(category: String)
 GET     /idea                                controllers.MainController.idea
 GET     /contact-us                          controllers.MainController.contactUs
+GET     /item/:id                            controllers.MainController.item(id: Long)
+
+
+GET     /card                                controllers.MainController.card
+GET     /checkout                            controllers.MainController.checkout
+
+
+
+
+
 
 
 
 POST    /contactUs                    controllers.Api.contactUs
 POST    /login                        controllers.Api.login
 POST    /logout                       controllers.Api.logout
-POST          /user                   controllers.Api.addUser
+POST    /user                         controllers.Api.addUser
+
+
+PUT     /projects/:name                      controllers.Application.createProject(name: String)
+
+
+
+
+
+
+
+
 
 
 

@@ -1,12 +1,20 @@
-@(companyData: Map[String, String], login: Boolean)(implicit messages: Messages, lang: Lang)
+@import models.Leaflet
+@import models.Category.Category
+
+@(leaflets: List[Leaflet], selectedCategory: Category, card: Card, companyData: Map[String, String], login: Boolean)(implicit messages: Messages, lang: Lang)
 
 
 @css() = {
 
 }
 
+
+
+
 @js() = {
 
+<script src="@routes.Assets.versioned("javascript/items/selectTab.js")"></script>
+<script src="@routes.Assets.versioned("javascript/snippets/leaflet.js")"></script>
 }
 
-@commonToAllPage.template(css(), js(), mainBlock()(messages, lang), companyData, login)(messages, lang)
+@commonToAllPage.template(css(), js(), mainBlock(leaflets, selectedCategory)(messages, lang), card, companyData, login)(messages, lang)

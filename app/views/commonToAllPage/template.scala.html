@@ -1,4 +1,4 @@
-@(css: Html, js: Html, mainBlock: Html, companyData: Map[String, String], login: Boolean)(implicit messages: Messages, lang: Lang)
+@(css: Html, js: Html, mainBlock: Html, card: Card,  companyData: Map[String, String], login: Boolean)(implicit messages: Messages, lang: Lang)
 
 <!DOCTYPE html>
 <html>
@@ -35,10 +35,7 @@
     <!-- Top bar ends -->
 
     <!-- Header two Starts -->
-    @commonToAllPage.headerMenu()
-
-
-
+    @commonToAllPage.headerMenu(card)(messages, lang)
 
     <!-- Main content starts -->
 

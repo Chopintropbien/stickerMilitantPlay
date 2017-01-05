@@ -1,0 +1,52 @@
+@import models.Leaflet
+
+@(leaflet: Leaflet)(implicit messages: Messages, lang: Lang)
+
+<!-- Shopping items -->
+<div class="shopping-item">
+    <!-- Image -->
+    <a href="/item/@leaflet.id">
+        <img class="img-responsive" src="@routes.Assets.at(leaflet.img)" alt="" />
+
+    </a>
+    <!-- Shopping item name / Heading -->
+
+
+    <div class="row">
+        <div class="col-md-9 col-xs-9">
+            <h4>
+                <a href="/item/@leaflet.id">@leaflet.title</a>
+            </h4>
+        </div>
+        <div class="col-md-3 col-xs-3">
+            <h4>
+                <span class="color pull-right">
+                    <span id="priceLeaflet-@leaflet.id">@("%.2f".format(leaflet.price))</span>€
+                </span>
+            </h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-9 col-xs-9">
+            @snippets.buttonsMinusPlus(leaflet.id)
+        </div>
+        <div class="col-md-3 col-xs-3">
+            <h5 id="totalContainer-@leaflet.id" style="display: none;">
+                <span class="total pull-right"><span id="total-@leaflet.id">30.50</span>€</span>
+            </h5>
+        </div>
+    </div>
+
+
+    <div class="clearfix"></div>
+
+
+    <!-- Buy now button -->
+    <div class="visible-xs">
+        <a class="btn btn-color btn-sm" href="#">Buy Now</a>
+    </div>
+    <!-- Shopping item hover block & link -->
+    <div class="item-hover bg-color hidden-xs">
+        <a href="#">Add to cart</a>
+    </div>
+</div>

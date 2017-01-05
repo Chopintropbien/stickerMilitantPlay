@@ -1,0 +1,14 @@
+@(leaflet: Leaflet, card: Card, companyData: Map[String, String], login: Boolean)(implicit messages: Messages, lang: Lang)
+
+
+@css() = {
+
+}
+
+@js() = {
+
+
+
+}
+
+@commonToAllPage.template(css(), js(), mainBlock(leaflet)(messages, lang), card, companyData, login)(messages, lang)

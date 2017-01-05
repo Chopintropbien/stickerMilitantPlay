@@ -1,0 +1,110 @@
+@(leaflet: Leaflet)(implicit messages: Messages, lang: Lang)
+
+    <!-- Page heading two starts -->
+
+    <div class="page-heading-two">
+        <div class="container">
+            <h2>Appointment <span>Something goes here</span></h2>
+            <div class="breads">
+                <!--Home / <a href="#">Page</a> / <a href="#">Sub Page</a>-->
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <!-- Page heading two ends -->
+
+    <div class="container">
+
+        <!-- Actual content for appointment -->
+        <div class="medical">
+            <div class="medic-appoint">
+                <div class="row">
+                    <div class="col-md-7 col-sm-8">
+                        <div class="block-heading-two">
+                            <h3><span>@leaflet.title</span></h3>
+                        </div>
+                        <!-- paragraph -->
+                        <p>@leaflet.description</p>
+
+                        <hr />
+
+
+
+                        <div class="carousel slide" data-ride="carousel" data-interval="5000" data-pause="hover" data-wrap="true">
+                            <!-- Slides. You can also add captions -->
+                            <div class="carousel-inner">
+                                <!-- Item, First item should have extra class "active" -->
+                                <div class="item active">
+                                    <!-- Image -->
+                                    <img src="@routes.Assets.at(leaflet.img)" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carousel ends -->
+
+                        <br />
+                    </div>
+                    <div class="col-md-5 col-sm-6">
+
+                        <div class="block-heading-two">
+                            <h3><span>Appointment Form</span></h3>
+                        </div>
+
+                        <!-- Appointment content -->
+                        <form role="form">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputOne">Full Name</label>
+                                        <input class="form-control" type="text" id="inputOne" placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputTwo">Email</label>
+                                        <input class="form-control" type="email" id="inputTwo" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputThree">Phone</label>
+                                        <input class="form-control" type="text" id="inputThree" placeholder="Phone">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <label for="inputFour">Date</label>
+                                        <input class="form-control" type="text" id="inputFour" placeholder="DD-MM-YYYY">
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="inputFive">Appointment For</label>
+                                        <select class="form-control" id="inputFive">
+                                            <option selected>Appointment For [Select Reason]</option>
+                                            <option>Consultant</option>
+                                            <option>Normal Check-up</option>
+                                            <option>Routine Check-up</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="inputSix">Additional Information</label>
+                                        <textarea class="form-control" id="inputSix" rows="6" placeholder="Additional information"></textarea>
+                                    </div>
+                                    <button type="button" class="btn btn-color">Done</button>&nbsp;
+                                    <button type="reset" class="btn btn-default">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>

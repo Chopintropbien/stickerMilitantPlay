@@ -1,4 +1,4 @@
-@()(implicit messages: Messages, lang: Lang)
+@(leaflets: List[Leaflet])(implicit messages: Messages, lang: Lang)
 
 <!-- Page heading one starts -->
 <div class="page-heading-one">
@@ -16,62 +16,25 @@
         <!-- Information Block -->
         <div class="info">
             <div class="row">
+                @for(c <- Category.values){
                 <div class="col-md-3 col-sm-6">
                     <!-- Information Item -->
-                    <div class="info-item bg-red">
-                        <!-- Number -->
+                    <a href="/items/@c">
+                        <div class="info-item bg-@Category.getColorClass(c)">
+                            <!-- Number -->
 										<span class="num-outer">
-											<i class="fa fa-truck red"></i>
+											<i class="fa @Category.getFaIcon(c) @Category.getColorClass(c)"></i>
 										</span>
-                        <!-- Heading -->
-                        <h4>Feminism</h4>
-                        <!-- Sub Heading -->
-                        <h5>Anti-sexism</h5>
-                        <div class="clearfix"></div>
-                    </div>
+                            <!-- Heading -->
+                            <h4>@Category.getName(c, lang)</h4>
+                            <!-- Sub Heading -->
+                            <h5>@Category.getDescription(c, lang)</h5>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <!-- Information Item -->
-                    <div class="info-item bg-green">
-                        <!-- Number -->
-										<span class="num-outer">
-											<i class="fa fa-retweet green"></i>
-										</span>
-                        <!-- Heading -->
-                        <h4>Capitalism</h4>
-                        <!-- Sub Heading -->
-                        <h5>Within 30 days.</h5>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <!-- Information Item -->
-                    <div class="info-item bg-orange">
-                        <!-- Number -->
-										<span class="num-outer">
-											<i class="fa fa-credit-card orange"></i>
-										</span>
-                        <!-- Heading -->
-                        <h4>Easy Payment</h4>
-                        <!-- Sub Heading -->
-                        <h5>All carts are separate.</h5>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <!-- Information Item -->
-                    <div class="info-item bg-lblue">
-                        <!-- Number -->
-										<span class="num-outer">
-											<i class="fa fa-phone lblue"></i>
-										</span>
-                        <!-- Heading -->
-                        <h4>Support</h4>
-                        <!-- Sub Heading -->
-                        <h5>+91-1800-000-909</h5>
-                        <div class="clearfix"></div>
-                    </div>
-                </div>
+
+                }
             </div>
         </div>
         <!-- Information block ends -->
@@ -81,100 +44,11 @@
             <!-- Block Title -->
             <h4><i class="fa fa-desktop color"></i>&nbsp; Popular Items&nbsp;<small>Quine Poor Squamo</small></h4>
             <div class="row">
+            @for(l <- leaflets.zipWithIndex){
                 <div class="col-md-4 col-sm-12">
-                    <!-- Shopping items -->
-                    <div class="shopping-item">
-                        <!-- Image -->
-                        <a href="ecom-item-single.html"><img class="img-responsive" src="@routes.Assets.versioned("img/ecommerce/items/2.png")" alt="" /></a>
-                        <!-- Shopping item name / Heading -->
-                        <h4><a href="ecom-item-single.html">Quasi Architects</a><span class="color pull-right">0.50$</span></h4>
-                        <div class="clearfix"></div>
-
-
-                        <div class="quantity">
-                            @snippets.buttonsMinusPlus()
-                        </div>
-
-
-                        <!-- Buy now button -->
-                        <div class="visible-xs">
-                            <a class="btn btn-color btn-sm" href="#">Buy Now</a>
-                        </div>
-                        <!-- Shopping item hover block & link -->
-                        <div class="item-hover bg-color hidden-xs">
-                            <a href="#">Add to cart</a>
-                        </div>
-                    </div>
+                    @snippets.leaflet(l._1)(messages, lang)
                 </div>
-                <div class="col-md-4 col-sm-12">
-                    <!-- Shopping items -->
-                    <div class="shopping-item">
-                        <!-- Image -->
-                        <a href="ecom-item-single.html"><img class="img-responsive" src="@routes.Assets.versioned("img/ecommerce/items/3.png")" alt="" /></a>
-                        <!-- Shopping item name / Heading -->
-                        <h4><a href="ecom-item-single.html">Byances Kcepte</a><span class="color pull-right">0.50$</span></h4>
-                        <div class="clearfix"></div>
-
-                        <div class="quantity">
-                            @snippets.buttonsMinusPlus()
-                        </div>
-
-                        <!-- Buy now button -->
-                        <div class="visible-xs">
-                            <a class="btn btn-color btn-sm" href="#">Buy Now</a>
-                        </div>
-                        <!-- Shopping item hover block & link -->
-                        <div class="item-hover bg-color hidden-xs">
-                            <a href="#">Add to cart</a>
-                        </div>
-                        <!-- Hot tag -->
-                        <span class="hot-tag bg-red">NEW</span>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <!-- Shopping items -->
-                    <div class="shopping-item">
-                        <!-- Image -->
-                        <a href=""><img class="img-responsive" src="@routes.Assets.versioned("img/ecommerce/items/5.png")" alt="" /></a>
-                        <!-- Shopping item name / Heading -->
-
-                        <div class="row">
-                            <div class="col-md-9">
-                                <h4><a href="ecom-item-single.html">Excepteur Sint</a></h4>
-                            </div>
-                            <div class="col-md-3">
-                                <h4><span class="color pull-right">0.50$</span></h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-9">
-                                @snippets.buttonsMinusPlus()
-                            </div>
-                            <div class="col-md-3">
-                                <h5><span class="total pull-right">30.50$</span></h5>
-                            </div>
-                        </div>
-
-
-
-
-
-                        <div class="clearfix"></div>
-
-
-                        <!-- Buy now button -->
-                        <div class="visible-xs">
-                            <a class="btn btn-color btn-sm" href="#">Buy Now</a>
-                        </div>
-                        <!-- Shopping item hover block & link -->
-                        <div class="item-hover bg-color hidden-xs">
-                            <a href="#">Add to cart</a>
-                        </div>
-                        <!-- Hot tag -->
-                        <span class="hot-tag bg-lblue">HOT</span>
-                    </div>
-                </div>
-
+            }
             </div>
         </div>
 

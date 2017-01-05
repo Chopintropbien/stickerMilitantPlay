@@ -21,7 +21,7 @@ CREATE TABLE "LEAFLET" (
     "IMG" text NOT NULL,
     "PRICE" number NOT NULL,
     "FORMAT" varchar(255) NOT NULL,
-    "CATHEGORY" varchar(255) NOT NULL,
+    "CATEGORY" varchar(255) NOT NULL,
     "STICKER" varchar(255) NOT NULL,
     "DESCRIPTION" varchar(255) NOT NULL
 );

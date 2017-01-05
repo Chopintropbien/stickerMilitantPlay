@@ -1,6 +1,11 @@
+@import models.Category.Category
+@import models.Card
+
+@(card: Card)(implicit messages: Messages, lang: Lang)
+
+
+
 <div class="header-2">
-
-
 
     <!-- Container -->
     <div class="container">
@@ -11,7 +16,7 @@
                     <h1><a href="/"><i class="fa fa-laptop"></i> Brave</a></h1>
                 </div>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-8">
 
                 <!-- Navigation starts.  -->
                 <div class="navy">
@@ -23,13 +28,12 @@
 
 
                         <!-- Main menu -->
-                        <li><a href="#">Sort by theme</a>
+                        <li><a>Sort by theme</a>
                             <!-- Submenu -->
                             <ul>
-                                <li><a href="/items" class="red">Feminism</a></li>
-                                <li><a href="">Capitalism</a></li>
-                                <li><a href="">Racism</a></li>
-                                <li><a href="">Privatisation</a></li>
+                                @for(c <- Category.values){
+                                <li><a href="/items/@c">@Category.getName(c, lang)</a></li>
+                                }
                             </ul>
                         </li>
 
@@ -40,10 +44,78 @@
                 <!-- Navigation ends -->
 
             </div>
-            <div class="col-md-1">
-                <div class="card">
-                    <h1><i class="fa fa-cart-arrow-down"></i> </a></h1>
+            <div class="col-md-2">
+                <!--<div class="card">-->
+                    <!--<h1><a><i class="fa fa-cart-arrow-down"></i> </a></h1>-->
+                <!--</div>-->
+
+                <div class="top-bar">
+                    <div class="container">
+                        <!-- Shopping kart starts -->
+                        <div class="tb-shopping-cart pull-right">
+                            <!-- Link with badge -->
+                            <a href="#" class="btn btn-white btn-xs b-dropdown">
+                                <i class="fa fa-cart-arrow-down"></i>
+                                <i class="fa fa-angle-down color fa-3"></i>
+                                <span class="badge badge-color">5</span>
+                                <p>You card</p>
+                            </a>
+                            <!-- Dropdown content with item details -->
+                            <div class="b-dropdown-block">
+                                <!-- Heading -->
+                                <h4><i class="fa fa-shopping-cart color"></i> Your Items</h4>
+                                <ul class="list-unstyled">
+
+                                    @for(item <- card.items){
+                                    <li>
+                                        <!-- Delete item -->
+                                        <div class="delete-item">
+                                            <i class="fa fa-times"></i>
+                                        </div>
+
+                                        <!-- Item image -->
+                                        <div class="cart-img">
+                                            <a href="/item/@item._2.id">
+                                                <img src="@routes.Assets.at(item._2.img)" alt="" class="img-responsive" />
+                                            </a>
+                                        </div>
+                                        <!-- Item heading and price -->
+                                        <div class="cart-title">
+                                            <h5>
+                                                <span>@item._1 x </span>
+                                                <a href="/item/@item._2.id">@item._2.title</a>
+                                            </h5>
+                                            <!-- Item price -->
+                                            <span class="label label-color label-sm">@("%.2f".format(item._2.price)) €</span>
+                                        </div>
+
+
+                                    </li>
+                                    }
+                                    <!-- Item 1 -->
+                                </ul>
+
+                                <div class="price">
+                                    <p> Livraison</p>
+                                    <span>@("%.2f".format(card.deliveryPrice)) €</span>
+                                </div>
+                                <hr>
+                                <div class="price">
+                                    <p> Total</p>
+                                    <span>@("%.2f".format(card.deliveryPrice)) €</span>
+                                </div>
+
+
+                                 <a href="#" class="btn btn-color btn-sm">Checkout
+                                     <span><i class="fa fa-angle-right"></i></span>
+                                 </a>
+                            </div>
+                        </div>
+                        <!-- Shopping kart ends -->
+
+                    </div>
                 </div>
+
             </div>
 
         </div>

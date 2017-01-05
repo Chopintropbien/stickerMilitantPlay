@@ -2,9 +2,9 @@ package dao
 
 import javax.inject.Inject
 
-import models.Leaflet
-import models.SizeFormat.SizeFormat
-import models.Category.Category
+import models.{Category, SizeFormat, Leaflet}
+import models.SizeFormat._
+import models.Category._
 import play.api.db.slick.DatabaseConfigProvider
 import slick.driver.JdbcProfile
 
@@ -15,7 +15,7 @@ import scala.concurrent.Future
  */
 
 
-class LeafletRepo @Inject() @Inject()(protected val dbConfigProvider: DatabaseConfigProvider) {
+class LeafletRepo @Inject()(protected val dbConfigProvider: DatabaseConfigProvider) {
 
   val dbConfig = dbConfigProvider.get[JdbcProfile]
   val db = dbConfig.db
@@ -40,8 +40,11 @@ class LeafletRepo @Inject() @Inject()(protected val dbConfigProvider: DatabaseCo
   def all: Future[List[Leaflet]] =
     db.run(Leaflets.to[List].result)
 
-  def create(title: String, img: String, price: Double, format: SizeFormat, category: Category, sticker: Boolean, description: String): Future[Long] = {
+  def create(title: String, img: String, price: Double, format: SizeFormat.Value, category: Category.Value, sticker: Boolean, description: String): Future[Long] = {
     val leaflet = Leaflet(0, title, img, price, format, category, sticker, description)
+    add(leaflet)
+  }
+  def add(leaflet: Leaflet): Future[Long] ={
     db.run(Leaflets returning Leaflets.map(_.id) += leaflet)
   }
 
@@ -85,6 +88,16 @@ class LeafletRepo @Inject() @Inject()(protected val dbConfigProvider: DatabaseCo
 
     def description = column[String]("DESCRIPTION")
 
+
+
+    implicit val categoryMapper = MappedColumnType.base[Category, String](
+      e => e.toString,
+      s => Category.withName(s)
+    )
+    implicit val sizeFormatMapper = MappedColumnType.base[SizeFormat, String](
+      e => e.toString,
+      s => SizeFormat.withName(s)
+    )
 
     def * = (id, title, img, price, format, category, sticker, description) <>((Leaflet.apply _).tupled, Leaflet.unapply)
 
