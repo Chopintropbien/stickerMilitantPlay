@@ -1,4 +1,6 @@
-@(css: Html, js: Html, mainBlock: Html, card: Card,  companyData: Map[String, String], login: Boolean)(implicit messages: Messages, lang: Lang)
+@import models.CardItem
+
+@(css: Html, js: Html, mainBlock: Html, card: Card, addedProduct: Option[CardItem], companyData: Map[String, String], login: Boolean)(implicit messages: Messages, lang: Lang)
 
 <!DOCTYPE html>
 <html>
@@ -36,6 +38,8 @@
 
     <!-- Header two Starts -->
     @commonToAllPage.headerMenu(card)(messages, lang)
+
+    @addedItemToCard(card, addedProduct)(messages, lang)
 
     <!-- Main content starts -->
 

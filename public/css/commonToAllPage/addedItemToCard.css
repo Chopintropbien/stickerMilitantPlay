@@ -1,0 +1,77 @@
+.one-feature{
+}
+
+.one-feature p{
+    font-weight: bold;
+    padding-right: 5px;
+    display: inline-block;
+}
+
+.one-feature span{
+    display: inline-block;
+}
+
+
+
+.addedItemToCard{
+    position: absolute;
+    width: 75%;
+    left: 100px;
+    top: 150px;
+    background-color: AliceBlue;
+    z-index: 1;
+}
+
+/* close popup */
+.addedItemToCard > div.closeDiv{
+    text-align: right;
+    width: 100%;
+    z-index: 2;
+
+}
+.addedItemToCard > div.closeDiv > i{
+    width: 25px;
+    margin-right: 7px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+.addedItemToCard > div.closeDiv > i:hover{
+    color: black;
+}
+
+
+
+/* Added Product */
+.addedItemToCard div.addProduct{
+    padding-left: 40px;
+     padding-bottom: 40px;
+}
+
+/*title*/
+.addedItemToCard div.addProduct h3{
+    width: 100%;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+.addedItemToCard div.addProduct h3 i{
+    display: inline-block;
+    width: 25px;
+    font-size: 20px;
+}
+
+.addedItemToCard div.addProduct div img{
+    width: 100%;
+}
+.addedItemToCard div.addProduct div h4{
+    padding-bottom: 10px;
+}
+
+
+
+/* card Recap*/
+.addedItemToCard div.cardRecap{
+    padding-right: 40px;
+    padding-bottom: 40px;
+    border-left: 2px solid red;
+}

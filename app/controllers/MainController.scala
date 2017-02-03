@@ -2,9 +2,10 @@ package controllers
 
 
 import dao.LeafletRepo
+import models.Category
 import models.ContactData.contactForm
 import models.Category._
-import models.{Card, Category, SizeFormat, Leaflet}
+import models._
 import models.SizeFormat.A6
 import play.api.mvc.{Action, Controller}
 import javax.inject.Inject
@@ -30,9 +31,9 @@ class MainController @Inject()(leafletRepo: LeafletRepo, val messagesApi: Messag
   val img = "0.png"
 
 
-  val cards = Card((2, Leaflet(0, "Le best ", img, 0.3, A6, Capitalism, true, "je suis le meiller")) ::
-    (7, Leaflet(0, "Le best ", img, 0.5, A6, Capitalism, true, "je suis le meiller")) ::
-    (1, Leaflet(0, "Le best ", img, 0.5, A6, Capitalism, true, "je suis le meiller")) ::
+  val cards = Card(CardItem(2, Leaflet(0, "Le best ", img, 0.3, A6, Capitalism, true, "je suis le meiller")) ::
+    CardItem(7, Leaflet(0, "Le best ", img, 0.5, A6, Capitalism, true, "je suis le meiller")) ::
+    CardItem(1, Leaflet(0, "Le best ", img, 0.5, A6, Capitalism, true, "je suis le meiller")) ::
     Nil)
 
 
@@ -68,7 +69,7 @@ class MainController @Inject()(leafletRepo: LeafletRepo, val messagesApi: Messag
   }
 
   def home = Action { implicit request =>
-    Ok(views.html.home.home(leaflets, cards, companyData, false))
+    Ok(views.html.home.home(leaflets, cards, Some(CardItem(2, Leaflet(8, "Le best ", img, 0.5, A6, Politic, true, "je suis le meiller"))), companyData, false))
   }
 
   def items(category: String) = Action { implicit request =>
@@ -76,28 +77,28 @@ class MainController @Inject()(leafletRepo: LeafletRepo, val messagesApi: Messag
       case None => Category.apply(0)
       case Some(c) => c // redirection
     }
-    Ok(views.html.items.items(leaflets, selectedCategory, cards, companyData, false))
+    Ok(views.html.items.items(leaflets, selectedCategory, cards, None, companyData, false))
   }
 
   def item(id: Long) = Action { implicit request =>
     val l = Leaflet(1, "Le best ", img, 0.5, A6, Capitalism, true, "je suis le meiller")
-    Ok(views.html.item.item(l, cards, companyData, false))
+    Ok(views.html.item.item(l, cards, None, companyData, false))
   }
 
 
   def idea = Action { implicit request =>
-    Ok(views.html.idea.idea(cards, companyData, false))
+    Ok(views.html.idea.idea(cards, None, companyData, false))
   }
 
   def contactUs = Action { implicit request =>
-    Ok(views.html.contactUs.contactUs(contactForm, cards, companyData, false))
+    Ok(views.html.contactUs.contactUs(contactForm, cards, None, companyData, false))
   }
 
   def checkout = Action { implicit request =>
-    Ok(views.html.checkout.checkout(cards, companyData, false))
+    Ok(views.html.checkout.checkout(cards, None, companyData, false))
   }
 
   def card = Action { implicit request =>
-    Ok(views.html.card.card(cards, companyData, false))
+    Ok(views.html.card.card(cards, None, companyData, false))
   }
 }

@@ -1,4 +1,6 @@
-@(contactForm: Form[ContactData], card: Card, companyData: Map[String, String], login: Boolean)(implicit message: RequestHeader, messages: Messages, lang: Lang)
+@import models.CardItem
+
+@(contactForm: Form[ContactData], card: Card, addedProduct: Option[CardItem], companyData: Map[String, String], login: Boolean)(implicit message: RequestHeader, messages: Messages, lang: Lang)
 
 
 @css() = {
@@ -11,4 +13,4 @@
 
 }
 
-@commonToAllPage.template(css(), js(), mainBlock(contactForm, companyData, login)(message, messages, lang), card, companyData, login)(messages, lang)
+@commonToAllPage.template(css(), js(), mainBlock(contactForm, companyData, login)(message, messages, lang), card, addedProduct, companyData, login)(messages, lang)

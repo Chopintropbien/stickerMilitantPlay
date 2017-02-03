@@ -1,4 +1,6 @@
-@(leaflet: Leaflet, card: Card, companyData: Map[String, String], login: Boolean)(implicit messages: Messages, lang: Lang)
+@import models.CardItem
+
+@(leaflet: Leaflet, card: Card, addedProduct: Option[CardItem], companyData: Map[String, String], login: Boolean)(implicit messages: Messages, lang: Lang)
 
 
 @css() = {
@@ -11,4 +13,4 @@
 
 }
 
-@commonToAllPage.template(css(), js(), mainBlock(leaflet)(messages, lang), card, companyData, login)(messages, lang)
+@commonToAllPage.template(css(), js(), mainBlock(leaflet)(messages, lang), card, addedProduct, companyData, login)(messages, lang)

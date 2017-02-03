@@ -75,18 +75,18 @@
 
                                         <!-- Item image -->
                                         <div class="cart-img">
-                                            <a href="/item/@item._2.id">
-                                                <img src="@routes.Assets.at(item._2.img)" alt="" class="img-responsive" />
+                                            <a href="/item/@item.item.id">
+                                                <img src="@routes.Assets.at(item.item.img)" alt="" class="img-responsive" />
                                             </a>
                                         </div>
                                         <!-- Item heading and price -->
                                         <div class="cart-title">
                                             <h5>
-                                                <span>@item._1 x </span>
-                                                <a href="/item/@item._2.id">@item._2.title</a>
+                                                <span>@item.numberItem x </span>
+                                                <a href="/item/@item.item.id">@item.item.title</a>
                                             </h5>
                                             <!-- Item price -->
-                                            <span class="label label-color label-sm">@("%.2f".format(item._2.price)) €</span>
+                                            <span class="label label-color label-sm">@("%.2f".format(item.item.price)) €</span>
                                         </div>
 
 
@@ -102,7 +102,7 @@
                                 <hr>
                                 <div class="price">
                                     <p> Total</p>
-                                    <span>@("%.2f".format(card.deliveryPrice)) €</span>
+                                    <span>@("%.2f".format(card.totalPrice)) €</span>
                                 </div>
 
 

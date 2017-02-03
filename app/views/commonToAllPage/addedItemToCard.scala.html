@@ -1,0 +1,83 @@
+@import models.CardItem
+@import models.Card
+
+@(card: Card, addedProduct: Option[CardItem])(implicit messages: Messages, lang: Lang)
+
+@addedProduct match {
+    case None => {}
+    case Some(product) => {
+
+
+<div class="addedItemToCard br-lblue br-style-3">
+    <div class="closeDiv">
+        <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+    </div>
+
+    <div class="col-md-6 addProduct">
+
+
+        <h3 class="green">
+        <i class="fa fa-check" aria-hidden="true"></i>
+
+        Produit ajouté au panier avec succès
+        </h3>
+
+        <div class="col-md-4">
+            <img src="@routes.Assets.at(product.item.img)">
+        </div>
+        <div class="col-md-8">
+            <h4>@product.item.title</h4>
+            <div class="one-feature">
+                <p>Quantité</p>
+                <span>@product.numberItem</span>
+            </div>
+            <div class="one-feature">
+                <p>Total</p>
+                <span>@("%.2f".format(product.totalPrice)) €</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-md-6 cardRecap">
+        <h2>Il y a @card.numberItem dans votre panier</h2>
+
+        <div class="one-feature">
+            <p>Total produits TTC</p>
+            <span>@("%.2f".format(card.totalPriceItems)) €</span>
+        </div>
+
+        <div class="one-feature">
+            <p>Frais de port TTC</p>
+            <span>@("%.2f".format(card.deliveryPrice)) €</span>
+        </div>
+
+        <div class="one-feature">
+            <p>Total TTC</p>
+            <span>@("%.2f".format(card.totalPrice)) €</span>
+        </div>
+
+
+        <div>
+            <button>
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                <span>Continuer mes achats</span>
+            </button>
+
+            <a>
+                <span>Continuer mes achats</span>
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+
+    }
+
+
+
+}
+

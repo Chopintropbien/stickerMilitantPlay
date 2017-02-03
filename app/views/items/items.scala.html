@@ -1,7 +1,8 @@
 @import models.Leaflet
 @import models.Category.Category
+@import models.CardItem
 
-@(leaflets: List[Leaflet], selectedCategory: Category, card: Card, companyData: Map[String, String], login: Boolean)(implicit messages: Messages, lang: Lang)
+@(leaflets: List[Leaflet], selectedCategory: Category, card: Card, addedProduct: Option[CardItem], companyData: Map[String, String], login: Boolean)(implicit messages: Messages, lang: Lang)
 
 
 @css() = {
@@ -17,4 +18,4 @@
 <script src="@routes.Assets.versioned("javascript/snippets/leaflet.js")"></script>
 }
 
-@commonToAllPage.template(css(), js(), mainBlock(leaflets, selectedCategory)(messages, lang), card, companyData, login)(messages, lang)
+@commonToAllPage.template(css(), js(), mainBlock(leaflets, selectedCategory)(messages, lang), card, addedProduct, companyData, login)(messages, lang)
