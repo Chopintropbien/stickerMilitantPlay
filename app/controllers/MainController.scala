@@ -69,7 +69,9 @@ class MainController @Inject()(leafletRepo: LeafletRepo, val messagesApi: Messag
   }
 
   def home = Action { implicit request =>
-    Ok(views.html.home.home(leaflets, cards, Some(CardItem(2, Leaflet(8, "Le best ", img, 0.5, A6, Politic, true, "je suis le meiller"))), companyData, false))
+    //Ok(views.html.home.home(leaflets, cards, Some(CardItem(2, Leaflet(8, "Le best ", img, 0.5, A6, Politic, true, "je suis le meiller"))), companyData, false))
+    Ok(views.html.home.home(leaflets, cards, None, companyData, false))
+
   }
 
   def items(category: String) = Action { implicit request =>

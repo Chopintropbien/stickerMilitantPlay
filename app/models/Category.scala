@@ -24,6 +24,7 @@ object Category extends Enum{
   def getName(c: Category, lang: Lang): String = {
     lang.code match {
       case "en" => getNameEn(c)
+      case "en-US" => getNameEn(c)
     }
   }
 
@@ -40,6 +41,7 @@ object Category extends Enum{
   def getDescription(c: Category, lang: Lang): String = {
     lang.code match {
       case "en" => getDescriptionEn(c)
+      case "en-US" => getDescriptionEn(c)
     }
   }
 
